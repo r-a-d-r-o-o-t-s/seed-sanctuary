@@ -1,8 +1,35 @@
+const { fontFamily: tw_fonts } = require('./node_modules/tailwindcss/defaultTheme');
+
+const Color = require("color");
+
+const alpha = (clr, val) => Color(clr).alpha(val).hsl().string();
+const lighten = (clr, val) => Color(clr).lighten(val).rgb().string();
+const darken = (clr, val) => Color(clr).darken(val).rgb().string();
+
+const COLOR_MUD = "#94837B"
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [`Segoe UI`, ...tw_fonts.sans],
+        serif: [...tw_fonts.serif],
+        mono: [...tw_fonts.mono],
+        moonrocks: [`Rubik Moonrocks`],
+      },
+      colors: {
+        mud: {
+          DEFAULT: COLOR_MUD,
+          lighter: lighten(COLOR_MUD, 0.1),
+          darker: darken(COLOR_MUD, 0.1),
+          type: darken(COLOR_MUD, 0.2),
+          75: alpha(COLOR_MUD, 0.75),
+        },
+      },
+    },
   },
   daisyui: {
     themes: [

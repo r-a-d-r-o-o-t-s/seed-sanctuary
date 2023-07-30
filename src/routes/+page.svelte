@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Navigation from '$lib/component/Navigation.svelte';
 	import { ndk } from '$lib/store/ndk';
 	import type { NDKEvent } from '@nostr-dev-kit/ndk';
 
@@ -12,12 +13,13 @@
 	});
 </script>
 
+<svelte:component this={Navigation} />
 <div class="flex flex-col w-full">
 	{#if subscriptionEvents.length}
 		{#each subscriptionEvents as se}
 			{#key se}
 				<div class="flex flex-row w-full">
-					<p class="font-sans font-medium text-base">
+					<p class="font-sans font-medium text-base text-mud-type">
 						{`Found seeds posted by ${se.author}`}
 					</p>
 				</div>
@@ -25,7 +27,7 @@
 		{/each}
 	{:else}
 		<div class="flex flex-row">
-			<p class="font-sans font-medium text-base">
+			<p class="font-sans font-medium text-base text-mud-type">
 				{`There are currently no seeds posted to the exchange`}
 			</p>
 		</div>
