@@ -4,6 +4,15 @@
 
 @layer base {
     @font-face {
+        font-family: "Magda";
+        src: url("/fonts/Magda-Text.woff2") format("woff2"),
+          url("/fonts/Magda-Text.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
         font-family: 'Rubik Moonrocks';
         src: url('/fonts/RubikMoonrocks-Regular.woff2') format('woff2'),
             url('/fonts/RubikMoonrocks-Regular.woff') format('woff');

@@ -19,6 +19,7 @@ export default {
         serif: [...tw_fonts.serif],
         mono: [...tw_fonts.mono],
         moonrocks: [`Rubik Moonrocks`],
+        magda: [`Magda`],
       },
       colors: {
         mud: {
